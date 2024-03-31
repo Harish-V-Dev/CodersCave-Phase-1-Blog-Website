@@ -1,0 +1,92 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hide horizontal scroll bar */
+    scroll-behavior: smooth; /* Smooth scroll behavior */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least the full height of the viewport */
+}
+
+header {
+    padding: 1rem;
+}
+
+main {
+    flex: 1; /* Allow main content to grow and fill remaining space */
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Ensure content is above the animated background */
+}
+
+footer {
+    background-color: #828282;
+    color: rgb(56, 56, 56);
+    padding: 1rem;
+    text-align: center;
+    z-index: 9;
+}
+
+.blog-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #f3ec78, #af4261, #00a8c5, #f0c05a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#top-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333;
+    z-index: 1000; /* Ensure top panel is above everything */
+}
+
+#top-panel p {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+/* Custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4F46E5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F3F4F6;
+}
